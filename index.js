@@ -21,17 +21,17 @@ function exibirEletricos(){
     })
 }
 
-function exibirVelocidade(){
+function exibirVelocidade(velocidade){
     axios.get(url).then(response => {
        const pokemons = response.data
-       let acima40 = []
+       let velocidadeAcima = []
        for(let indice = 0; indice < pokemons.length; indice++){
-            if(pokemons[indice].base.Speed >= 40){
-                acima40.push(pokemons[indice])
-                console.log(acima40)
+            if(pokemons[indice].base.Speed >= velocidade){
+                velocidadeAcima.push(pokemons[indice])
+                console.log(velocidadeAcima)
             }
        }
     })   
 }
 
-exibirVelocidade()
+exibirVelocidade(150)
